@@ -1,0 +1,12 @@
+version: '3'
+services:
+  rstudio:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8787:8787"
+    environment:
+      - PASSWORD=password  # Change 'password' to your desired password
+    volumes:
+      - ./data:/home/rstudio/data # Mount a local directory for data persistence
